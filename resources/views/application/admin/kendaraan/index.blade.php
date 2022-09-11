@@ -44,7 +44,7 @@
                     <td>{{$tmp->jenis_kendaraan}}</td>
                     <td>Rp. {{number_format($tmp->biaya,2,',','.')}}</td>
                     <td class="td-actions text-center">
-                      <form id="formDelete" action="{{route('DeleteKendaraan')}}/{{$tmp->id_kendaraan}}" enctype="multipart/form-data" method="POST">
+                      <form id="formDelete{{$tmp->id_kendaraan}}" action="{{route('DeleteKendaraan', $tmp->id_kendaraan)}}"  method="POST">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="_method" value="DELETE">
                         <a onclick="Edit(`{{$tmp->id_kendaraan}}`,`{{$tmp->jenis_kendaraan}}`,`{{$tmp->biaya}}`)">
@@ -118,7 +118,7 @@
           text: "data telah terhapus!",
           type: 'success',
         }).then((value) => {
-          $( "#formDelete" ).submit()
+          $( "#formDelete"+id ).submit()
         });
       } else {
         swal(

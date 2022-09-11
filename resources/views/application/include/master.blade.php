@@ -124,7 +124,7 @@
       @yield('content')
 
       <footer class="footer hide">
-        <audio id="buzzer" src="{{ asset('assets/sound/inbox.mp3') }}" type="audio/mp3"></audio>
+        
         <div class="container-fluid">
           <div class="copyright float-right">
             &copy;

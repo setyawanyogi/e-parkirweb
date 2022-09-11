@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/tcp.png') }}">
-  <link rel="icon" type="image/png" href="{{ asset('assets/img/tcp.png') }}">
+{{-- <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/tcp.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('assets/img/tcp.png') }}">--}}
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Halaman Login
@@ -15,9 +15,11 @@
   <!-- CSS Files -->
   <link href="{{ asset('assets/css/material-dashboard.css?v=2.1.0') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
+ {{-- <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />--}}
   <link href="{{ asset('assets/css/grid.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/custom-template.css') }}" rel="stylesheet" />
+{{--<script src="{{ asset('assets/js/core/jquery.min.js') }}"></script> --}}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <style>
     .navbar p {
         display: inline-block;
@@ -97,19 +99,12 @@
       </div>
       <footer class="footer">
         <div class="container">
-          {{-- <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, Designed by
-            <a href="https://www.instagram.com/sase_aditya/">Sase Aditya.</a>
-          </div> --}}
         </div>
       </footer>
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
+ {{-- <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script> --}}
   <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
   <script src="{{ asset('assets/js/core/bootstrap-material-design.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
@@ -126,7 +121,7 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('assets/js/material-dashboard.js?v=2.1.0') }}" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ asset('assets/demo/demo.js') }}"></script>
+ {{-- <script src="{{ asset('assets/demo/demo.js') }}"></script>--}}
   <script>
     window.setTimeout("waktu()",1000);
      function waktu() {
@@ -182,7 +177,7 @@
 
       $.ajax({
         type : "GET",
-        url  : "{{ route('prosesLogin') }}",
+	url  : "{{ route('prosesLogin') }}",
         data : {
           'email'  : user,
           'pass'  : pass

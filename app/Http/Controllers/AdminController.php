@@ -132,14 +132,13 @@ class AdminController extends Controller
     	$viewPage = "application.admin.parkir.index";
 		$page	= ["Home","Data Parkir"];
 		$data = DB::table('parkir as p')
-				->join('kendaraan as k','p.id_kendaraan','=','k.id_kendaraan')
+				->leftjoin('kendaraan as k','p.id_kendaraan','=','k.id_kendaraan')
 					->orderBy('tgl','asc')
 						->get();
 
 		$dataUser = DB::table('users as u')
 					->join('role as rl','u.id_role','=','rl.id_role')
 						->get();
-
 		return view($viewPage,array(
 			'pageNow' 	 	=> $page,
 			'data' 	 		=> $data,
